@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+    .footer {
+      bottom: 0;
+      width: 100%;
+      background-color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .copyright {
+      font-size: 14px;
+    }
+
+    .about {
+      background-color: #faf5ff;;
+      margin-top: 5rem;
+    }
+    .about__container {
+      min-height: 100vh;
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+    }
+    .contents {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .heading {
+      margin-top: 0;
+    }
+
+    .card {
+      position: relative;
+      width: 100%;
+      height: 85%;
+      border-radius: 14px;
+      padding: 5px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+      ;
+    }
+
+    .bg {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background: rgba(255, 255, 255, 255);
+      border-radius: 10px;
+      overflow: hidden;
+      outline: 2px solid white;
+    }
+
+    .blob {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 85%;
+      border-radius: 50%;
+      background-color: #ff0000;
+      opacity: 1;
+      filter: blur(12px);
+      animation: blob-bounce 5s infinite ease;
+    }
+
+    @keyframes blob-bounce {
+      0% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+      }
+
+      25% {
+        transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+      }
+
+      50% {
+        transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+      }
+
+      75% {
+        transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+      }
+
+      100% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+      }
+    }
+
+    .aboutCard {
+      width: 100%;
+      height: 70px;
+      background: linear-gradient(to right,rgb(137, 104, 255),rgb(175, 152, 255));
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .aboutCard::before {
+      width: 150px;
+      height: 150px;
+      content: "";
+      background: linear-gradient(to right,rgb(142, 110, 255),rgb(208, 195, 255));
+      position: absolute;
+      z-index: 1;
+      border-radius: 50%;
+      right: -25%;
+      top: -25%;
+    }
+
+
+    .aboutCards {
+      width: 100%;
+      height: 100%;
+      margin-top: 5px;
+      background: linear-gradient(to right,rgb(137, 104, 255),rgb(175, 152, 255));
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .aboutCards::before {
+      width: 150px;
+      height: 150px;
+      content: "";
+      background: linear-gradient(to right,rgb(142, 110, 255),rgb(208, 195, 255));
+      position: absolute;
+      z-index: 1;
+      border-radius: 50%;
+      right: -25%;
+      top: -25%;
+    }
+
+    .aboutHeading {
+      font-size: 1.5em;
+      font-weight: 600;
+      color: rgb(241, 241, 241);
+      z-index: 2;
+    }
+
+    .aboutDescription {
+      font-size: 2em;
+      color: black;
+      z-index: 2;
+      text-align: justify;
+    }
+
+    .aboutDescriptionContainer {
+      max-height: 100%;
+      overflow-y: auto;
+    }
+
+    @media (max-width: 768px) {
+      .about__container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .aboutDescriptionContainer {
+        max-height: 100%;
+        z-index: 11111;
+      }
+
+      .aboutDescription {
+        font-size: 0.9em;
+        color: black;
+        z-index: 11111;
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 1.5s ease-in-out forwards; /* Use 'forwards' to retain styles after animation */
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+  </style>
+
+  <title>My Portfolio</title>
+</head>
+<body>
+  <nav>
+    <div class="nav__content">
+      <div class="logo"><a href="#">Cris</a></div>
+      <label for="check" class="checkbox">
+        <i class="ri-menu-line"></i>
+      </label>
+      <input type="checkbox" name="check" id="check" />
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!--============ About Start ============-->
+  <section class="about fade-in">
+    <div class="about__container">
+      <div class="contents">
+        <div class="card">
+          <div class="bg">
+            <div class="aboutCard">
+              <p class="aboutHeading">About Me!</p>
+            </div>
+
+            <div class="aboutCards">
+              <div class="aboutDescriptionContainer">
+                <p class="aboutDescription">Hello! I'm <b>Cristen Refugio</b>, a passionate and innovative Web Designer dedicated to crafting exceptional online experiences. With a keen eye for aesthetics and a deep understanding of user-centric design, I bring websites to life that not only captivate but also function seamlessly. My journey in the dynamic world of web design has equipped me with a versatile skill set, encompassing everything from intuitive user interfaces to visually striking layouts. As a creative problem solver, I thrive on turning concepts into captivating digital realities. Beyond the pixels and code, I believe in the power of collaboration and continuous learning to stay at the forefront of industry trends. Join me on this exciting digital voyage, where creativity meets functionality, and let's build extraordinary web solutions together.</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="blob"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--============ About End ============-->
+
+  <!--============ Footer Start ============-->
+  <div class="footer">
+    <div class="copyright">
+      &copy; 2024 Cristen Refugio. All Rights Reserved.
+    </div>
+  </div>
+  <!--============ Footer End ============-->
+
+  <!-- Bootstrap JS (optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-dL5pKf89kzB4KZs4+gqEr12OQBSZw1TRxZl6ZlPzEJ1pAhJfRb38dBrGfjN8db6R" crossorigin="anonymous"></script>
+  <script src="script.js" charset="utf-8"></script>
+</body>
+</html>
